@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { TabPage } from './../pages/tabpage/tabpage';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ import { ContactPage } from './../pages/contact/contact';
 import { AboutPage } from './../pages/about/about';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { LoginPage } from '../pages/login/login';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

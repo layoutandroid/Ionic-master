@@ -5,11 +5,15 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
-  The world is your oyster and testing newthings.
+  <!-- The world is your oyster and testing newthings.
   The world is your oyster and testing once agin for new testing merge.
+  Mare nyi avvvu tel leva
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  </p> -->
+  <ion-tabs>
+    <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+  </ion-tabs>
 </ion-content>

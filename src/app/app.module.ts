@@ -11,12 +11,13 @@ import { ListPage } from '../pages/list/list';
 import { ContactPage } from './../pages/contact/contact';
 import { AboutPage } from './../pages/about/about';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LoginPage } from '../pages/login/login';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,TabsPage,AboutPage,ContactPage,TabPage
+    ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage
   ],
   imports: [
     BrowserModule,
@@ -26,11 +27,11 @@ import { TabsPage } from '../pages/tabs/tabs';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage, TabsPage,AboutPage,ContactPage,TabPage
+    ListPage, TabsPage,AboutPage,ContactPage,TabPage,LoginPage
   ],
   providers: [
     StatusBar,
-    SplashScreen,TabsPage,AboutPage,ContactPage,TabPage,
+    SplashScreen,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

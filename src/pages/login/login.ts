@@ -27,31 +27,14 @@ export class LoginPage {
 
   login(): void {
     const obj = {
-<<<<<<< HEAD
-      EmailId: "a@b.c"
-      }
-      var headers = new Headers();
-      headers.set('Content-type', 'application/json')
-      headers.append('Accept', 'application/json ');
-        console.log('doing'+ JSON.stringify(obj));
-
-         const uri = 'http://72.249.170.12/BluetoothApi/api/Login/ForgotPassword';
-         this.http.post(uri, JSON.stringify(obj),{headers})
-=======
       UserName: "snehal",
       Password: "123456"
     }
-    var headers = {
-      "Access-Control-Allow-Origin" : "*",
-      "Access-Control-Allow-Methods" : "POST, GET, OPTIONS, PUT",
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-  }
+  var headers = new Headers();
+      headers.set('Content-type', 'application/json')
         console.log('doing'+ JSON.stringify(obj));
-        debugger;
          const uri = 'http://72.249.170.12/BluetoothApi/api/Login/Login';
          this.http.post(uri,JSON.stringify(obj),{headers})
->>>>>>> 4f7fde031737870922bcfb58a18ec5ee42b86631
         .subscribe(res => {
           console.log("done");
         }, (err) => {

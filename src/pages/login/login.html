@@ -10,9 +10,6 @@
 </ion-header>
 <ion-content padding>
   <ion-row>
-    <ion-col text-center>
-      <img src="http://www.kampuzz.com/images/logo/KP54c582669609311682.jpeg" width="200">
-    </ion-col>
   </ion-row>
   <div showWhen="core">
     <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
@@ -39,8 +36,5 @@
         </ion-col>
       </ion-row>
     </form>
-  </div>
-  <div hideWhen="core">
-    <button ion-button full (click)="redirectLogin()">Login with Okta</button>
   </div>
 </ion-content>

@@ -2,6 +2,7 @@ import {HttpParams} from '@angular/common/http/src/params';
 import { Component, ViewChild } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -28,9 +29,16 @@ export class LoginPage {
       UserName: "snehal",
       Password: "123456"
     }
+    var headers = {
+      "Access-Control-Allow-Origin" : "*",
+      "Access-Control-Allow-Methods" : "POST, GET, OPTIONS, PUT",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+  }
         console.log('doing'+ JSON.stringify(obj));
-         const uri = 'https://yagnaai.000webhostapp.com/product/create.php';
-         this.http.post(uri, JSON.stringify(obj))
+        debugger;
+         const uri = 'http://72.249.170.12/BluetoothApi/api/Login/Login';
+         this.http.post(uri,JSON.stringify(obj),{headers})
         .subscribe(res => {
           console.log("done");
         }, (err) => {

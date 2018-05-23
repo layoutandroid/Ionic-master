@@ -7,7 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
-import { HttpClientModule } from '@angular/common/http';
+
 @Component({
   templateUrl: 'app.html'
 })

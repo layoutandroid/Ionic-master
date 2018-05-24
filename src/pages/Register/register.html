@@ -4,22 +4,30 @@
           <ion-icon name="menu"></ion-icon>
         </button>
     <ion-title>
-      Login
+      Register
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <ion-row>
   </ion-row>
-  <div >
-    <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+  <div>
+    <form #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off">
       <ion-row>
         <ion-col>
           <ion-list inset>
-            <ion-item>
-              <ion-input placeholder="Email" name="username" id="loginField"
-                         type="text" required [(ngModel)]="username" #email></ion-input>
+             <ion-item>
+              <ion-input placeholder="Name" name="Name" id="nameField"
+                         type="text" required [(ngModel)]="Name"></ion-input>
             </ion-item>
+            <ion-item>
+              <ion-input placeholder="Email" name="Email" id="emailField"
+                         type="text" required [(ngModel)]="Email" #email></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input placeholder="Username" name="Username" id="usernameField"
+                           type="text" required [(ngModel)]="Username"></ion-input>
+              </ion-item>
             <ion-item>
               <ion-input placeholder="Password" name="password" id="passwordField"
                          type="password" required [(ngModel)]="password"></ion-input>
@@ -31,7 +39,7 @@
         <ion-col>
           <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
           <button ion-button class="submit-btn" full type="submit"
-                  [disabled]="!loginForm.form.valid">Login
+                  [disabled]="!registerForm.form.valid">Register
           </button>
         </ion-col>
       </ion-row>

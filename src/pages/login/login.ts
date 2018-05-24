@@ -1,7 +1,6 @@
 import {HttpParams} from '@angular/common/http/src/params';
 import { Component, ViewChild } from '@angular/core';
-//import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers,  } from '@angular/http';
 
 
 @Component({
@@ -31,12 +30,14 @@ export class LoginPage {
       Password: "123456"
     }
   var headers = new Headers();
-      headers.set('Content-type', 'application/json')
+      headers.set('Content-type','application/json');
         console.log('doing'+ JSON.stringify(obj));
+        debugger;
          const uri = 'http://72.249.170.12/BluetoothApi/api/Login/Login';
          this.http.post(uri,JSON.stringify(obj),{headers})
         .subscribe(res => {
           console.log("done");
+          alert('done');
         }, (err) => {
           console.log(err);
         });

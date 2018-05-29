@@ -9,9 +9,9 @@ import { Http, Headers,  } from '@angular/http';
 })
 export class LoginPage {
   @ViewChild('email') email: any;
-  private username: string;
-  private password: string;
-  private error: string;
+  public username: string;
+  public password: string;
+  public error: string;
   apiUrl = 'http://72.249.170.12/BluetoothApi/api/Login/Login';
   constructor(public http: Http) {
   }
@@ -26,14 +26,14 @@ export class LoginPage {
 
   login(): void {
     const obj = {
-      UserName: "snehal",
-      Password: "123456"
-    }
+      "UserName":"admin",
+      "Password":"admin"
+     }
   var headers = new Headers();
       headers.set('Content-type','application/json');
         console.log('doing'+ JSON.stringify(obj));
         debugger;
-         const uri = 'http://72.249.170.12/BluetoothApi/api/Login/Login';
+         const uri = 'http://72.249.170.12/HRDCServiceOnline/user.svc/UserLogin';
          this.http.post(uri,JSON.stringify(obj),{headers})
         .subscribe(res => {
           console.log("done");

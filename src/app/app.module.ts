@@ -14,26 +14,28 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/Register/register';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { ModelPage } from '../pages/Model/model';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage
+    ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpModule,HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage, TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage
+    ListPage, TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage
   ],
   providers: [
     StatusBar,
-    SplashScreen,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,
+    SplashScreen,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

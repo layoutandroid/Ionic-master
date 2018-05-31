@@ -16,11 +16,14 @@ import { RegisterPage } from '../pages/Register/register';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { ModelPage } from '../pages/Model/model';
+import { HomePagetest } from '../pages/hometest/hometest';
+
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage
+    ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest
   ],
   imports: [
     BrowserModule,
@@ -31,12 +34,13 @@ import { ModelPage } from '../pages/Model/model';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage, TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage
+    ListPage, TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,
   ],
   providers: [
     StatusBar,
     SplashScreen,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+  ],
 })
 export class AppModule {}
+

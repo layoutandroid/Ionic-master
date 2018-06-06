@@ -1,3 +1,4 @@
+import { GoogleauthPage } from './../pages/googleauth/googleauth';
 import { HttpClient } from '@angular/common/http';
 import { TabPage } from './../pages/tabpage/tabpage';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,13 +18,15 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { ModelPage } from '../pages/Model/model';
 import { HomePagetest } from '../pages/hometest/hometest';
-
-
+import { GooglePlus } from '@ionic-native/google-plus';
+import { MapslocationPage } from '../pages/mapslocation/mapslocation';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Device } from '@ionic-native/device';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest
+    ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,GoogleauthPage,MapslocationPage,
   ],
   imports: [
     BrowserModule,
@@ -34,12 +37,13 @@ import { HomePagetest } from '../pages/hometest/hometest';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage, TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,
+    ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,GoogleauthPage,MapslocationPage,
   ],
   providers: [
     StatusBar,
-    SplashScreen,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    SplashScreen,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,GooglePlus,MapslocationPage,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},  Geolocation,
+    Device
   ],
 })
 export class AppModule {}

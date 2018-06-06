@@ -1,3 +1,5 @@
+import { MapslocationPage } from './../pages/mapslocation/mapslocation';
+import { GoogleauthPage } from './../pages/googleauth/googleauth';
 import { TabPage } from './../pages/tabpage/tabpage';
 import { Component,ViewChild } from '@angular/core';
 import { Nav,Platform } from 'ionic-angular';
@@ -29,7 +31,9 @@ export class MyApp {
         { title: 'Tab', component: TabPage },
         { title: 'Login', component: LoginPage },
         { title: 'Register', component: RegisterPage },
-        { title: 'List', component: ListPage}
+        { title: 'List', component: ListPage},
+        { title: 'Google Sign in', component: GoogleauthPage},
+        { title: 'MapLocation', component: MapslocationPage},
       ];
   }
   openPage(page) {

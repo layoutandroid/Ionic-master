@@ -22,11 +22,13 @@ import { GooglePlus } from '@ionic-native/google-plus';
 import { MapslocationPage } from '../pages/mapslocation/mapslocation';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
+import { Facebook } from '@ionic-native/facebook';
+import { FacebookloginPage } from '../pages/facebooklogin/facebooklogin';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,GoogleauthPage,MapslocationPage,
+    ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,GoogleauthPage,MapslocationPage,FacebookloginPage,
   ],
   imports: [
     BrowserModule,
@@ -37,13 +39,13 @@ import { Device } from '@ionic-native/device';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,GoogleauthPage,MapslocationPage,
+    ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,GoogleauthPage,MapslocationPage,FacebookloginPage,
   ],
   providers: [
     StatusBar,
-    SplashScreen,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,GooglePlus,MapslocationPage,
+    SplashScreen,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,GooglePlus,MapslocationPage,FacebookloginPage,
     {provide: ErrorHandler, useClass: IonicErrorHandler},  Geolocation,
-    Device
+    Device, Facebook
   ],
 })
 export class AppModule {}

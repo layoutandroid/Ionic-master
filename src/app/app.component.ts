@@ -10,6 +10,7 @@ import { ListPage } from '../pages/list/list';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/Register/register';
+import { FacebookloginPage } from '../pages/facebooklogin/facebooklogin';
 
 @Component({
   templateUrl: 'app.html'
@@ -34,6 +35,7 @@ export class MyApp {
         { title: 'List', component: ListPage},
         { title: 'Google Sign in', component: GoogleauthPage},
         { title: 'MapLocation', component: MapslocationPage},
+        { title: 'facebooklogin', component: FacebookloginPage},
       ];
   }
   openPage(page) {

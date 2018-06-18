@@ -84,13 +84,23 @@
     <plugin name="cordova-plugin-ionic-webview" spec="1.1.19" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="2.0.5" />
     <allow-navigation href="http://192.168.10.135:8100" />
+    <plugin name="cordova-plugin-ble-central" spec="^1.1.4">
+        <variable name="BLUETOOTH_USAGE_DESCRIPTION" value=" " />
+    </plugin>
     <plugin name="cordova-plugin-googleplus" spec="~5.3.0">
         <variable name="REVERSED_CLIENT_ID" value="com.apps.googleusercontent.923278557828-c3uq43e1ertvh0k5uku3rsal5pg66nvc" />
         <variable name="WEB_APPLICATION_CLIENT_ID" value="923278557828-c3uq43e1ertvh0k5uku3rsal5pg66nvc.apps.googleusercontent.com" />
     </plugin>
-    <engine name="android" spec="~6.1.2" />
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
+    </plugin>
+    <plugin name="cordova-plugin-bluetoothle" spec="~4.4.3" />
     <plugin name="cordova-plugin-facebook4" spec="~1.10.1">
         <variable name="APP_ID" value="237721856996493" />
         <variable name="APP_NAME" value="ionictest" />
     </plugin>
+<plugin spec="https://github.com/slickalpha/phonegap-plugin-barcodescanner.git" source="git">
+	<param name="CAMERA_USAGE_DESCRIPTION" value="To scan barcodes" />
+</plugin>
+    <engine name="android" spec="~6.4.0" />
 </widget>

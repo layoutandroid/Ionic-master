@@ -1,3 +1,5 @@
+import { BledetailPage } from './../pages/bledetail/bledetail';
+import { BlehomePage } from './../pages/blehome/blehome';
 import { GoogleauthPage } from './../pages/googleauth/googleauth';
 import { HttpClient } from '@angular/common/http';
 import { TabPage } from './../pages/tabpage/tabpage';
@@ -5,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { BLE } from '@ionic-native/ble';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -24,11 +27,21 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
 import { Facebook } from '@ionic-native/facebook';
 import { FacebookloginPage } from '../pages/facebooklogin/facebooklogin';
+import { SpinnerloaderPage } from '../pages/spinnerloader/spinnerloader';
+import { BarqrcodePage } from '../pages/barqrcode/barqrcode';
+import { DataServiceProvider } from '../providers/data-service/data-service';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
+
+
+
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,GoogleauthPage,MapslocationPage,FacebookloginPage,
+    BlehomePage,BledetailPage,SpinnerloaderPage,BarqrcodePage,
   ],
   imports: [
     BrowserModule,
@@ -40,12 +53,14 @@ import { FacebookloginPage } from '../pages/facebooklogin/facebooklogin';
     MyApp,
     HomePage,
     ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,GoogleauthPage,MapslocationPage,FacebookloginPage,
+    BlehomePage,BledetailPage,SpinnerloaderPage,BarqrcodePage,
   ],
   providers: [
     StatusBar,
     SplashScreen,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,GooglePlus,MapslocationPage,FacebookloginPage,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},  Geolocation,
-    Device, Facebook
+    BlehomePage,BledetailPage,BarqrcodePage,DataServiceProvider,BarcodeScanner,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},Geolocation,
+    Device, Facebook,BLE,
   ],
 })
 export class AppModule {}

@@ -1,0 +1,28 @@
+page-spinnerloader {
+  .custom {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: relative !important;
+    margin-top: 20%;
+  }
+  .custom-dot svg {
+   height: 45px !important;
+   margin-bottom: 5%;
+  }
+  .custombutton{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+   height: 80px !important;
+   width: 100% !important;
+   position: relative !important;
+   margin-top: 20%;
+  box-shadow: none !important;
+  }
+  }
+
+

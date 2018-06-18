@@ -1,3 +1,4 @@
+import { BlehomePage } from './../pages/blehome/blehome';
 import { MapslocationPage } from './../pages/mapslocation/mapslocation';
 import { GoogleauthPage } from './../pages/googleauth/googleauth';
 import { TabPage } from './../pages/tabpage/tabpage';
@@ -11,6 +12,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/Register/register';
 import { FacebookloginPage } from '../pages/facebooklogin/facebooklogin';
+import { SpinnerloaderPage } from '../pages/spinnerloader/spinnerloader';
+import { BarqrcodePage } from '../pages/barqrcode/barqrcode';
 
 @Component({
   templateUrl: 'app.html'
@@ -36,6 +39,9 @@ export class MyApp {
         { title: 'Google Sign in', component: GoogleauthPage},
         { title: 'MapLocation', component: MapslocationPage},
         { title: 'facebooklogin', component: FacebookloginPage},
+        { title: 'Ble', component: BlehomePage},
+        { title: 'SpinnerLoader', component: SpinnerloaderPage},
+        { title: 'BarQrcode', component: BarqrcodePage},
       ];
   }
   openPage(page) {

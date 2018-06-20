@@ -95,12 +95,14 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
     <plugin name="cordova-plugin-bluetoothle" spec="~4.4.3" />
-    <plugin name="cordova-plugin-facebook4" spec="~1.10.1">
+    <engine name="android" spec="~6.4.0" />
+    <plugin name="phonegap-plugin-barcodescanner" spec="~6.0.8">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="to save barcode " />
+    </plugin>
+    <plugin name="cordova-plugin-facebook4" spec="~1.7.4">
         <variable name="APP_ID" value="237721856996493" />
         <variable name="APP_NAME" value="ionictest" />
     </plugin>
-<plugin spec="https://github.com/slickalpha/phonegap-plugin-barcodescanner.git" source="git">
-	<param name="CAMERA_USAGE_DESCRIPTION" value="To scan barcodes" />
-</plugin>
-    <engine name="android" spec="~6.4.0" />
+    <plugin name="cordova-plugin-speechrecognition" spec="~1.1.2" />
+    <plugin name="cordova-plugin-tts" spec="~0.2.3" />
 </widget>

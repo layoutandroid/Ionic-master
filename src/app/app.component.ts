@@ -14,6 +14,7 @@ import { RegisterPage } from '../pages/Register/register';
 import { FacebookloginPage } from '../pages/facebooklogin/facebooklogin';
 import { SpinnerloaderPage } from '../pages/spinnerloader/spinnerloader';
 import { BarqrcodePage } from '../pages/barqrcode/barqrcode';
+import { SpeechtotextPage } from '../pages/speechtotext/speechtotext';
 
 @Component({
   templateUrl: 'app.html'
@@ -42,6 +43,7 @@ export class MyApp {
         { title: 'Ble', component: BlehomePage},
         { title: 'SpinnerLoader', component: SpinnerloaderPage},
         { title: 'BarQrcode', component: BarqrcodePage},
+        { title: 'Speechtotext', component: SpeechtotextPage},
       ];
   }
   openPage(page) {

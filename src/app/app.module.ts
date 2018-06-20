@@ -31,6 +31,11 @@ import { SpinnerloaderPage } from '../pages/spinnerloader/spinnerloader';
 import { BarqrcodePage } from '../pages/barqrcode/barqrcode';
 import { DataServiceProvider } from '../providers/data-service/data-service';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { SpeechtotextPage } from '../pages/speechtotext/speechtotext';
+import { SpeechRecognition } from '@ionic-native/speech-recognition';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+
+
 
 
 
@@ -41,7 +46,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     MyApp,
     HomePage,
     ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,GoogleauthPage,MapslocationPage,FacebookloginPage,
-    BlehomePage,BledetailPage,SpinnerloaderPage,BarqrcodePage,
+    BlehomePage,BledetailPage,SpinnerloaderPage,BarqrcodePage,SpeechtotextPage,
   ],
   imports: [
     BrowserModule,
@@ -53,12 +58,12 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     MyApp,
     HomePage,
     ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,GoogleauthPage,MapslocationPage,FacebookloginPage,
-    BlehomePage,BledetailPage,SpinnerloaderPage,BarqrcodePage,
+    BlehomePage,BledetailPage,SpinnerloaderPage,BarqrcodePage,SpeechtotextPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,GooglePlus,MapslocationPage,FacebookloginPage,
-    BlehomePage,BledetailPage,BarqrcodePage,DataServiceProvider,BarcodeScanner,
+    BlehomePage,BledetailPage,BarqrcodePage,DataServiceProvider,BarcodeScanner,SpeechRecognition,TextToSpeech,
     {provide: ErrorHandler, useClass: IonicErrorHandler},Geolocation,
     Device, Facebook,BLE,
   ],

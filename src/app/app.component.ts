@@ -15,6 +15,8 @@ import { FacebookloginPage } from '../pages/facebooklogin/facebooklogin';
 import { SpinnerloaderPage } from '../pages/spinnerloader/spinnerloader';
 import { BarqrcodePage } from '../pages/barqrcode/barqrcode';
 import { SpeechtotextPage } from '../pages/speechtotext/speechtotext';
+import { CameraPage } from '../pages/camera/camera';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -44,6 +46,7 @@ export class MyApp {
         { title: 'SpinnerLoader', component: SpinnerloaderPage},
         { title: 'BarQrcode', component: BarqrcodePage},
         { title: 'Speechtotext', component: SpeechtotextPage},
+        { title: 'Camera & Filter', component: CameraPage},
       ];
   }
   openPage(page) {

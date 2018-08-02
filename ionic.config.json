@@ -1,6 +1,5 @@
 {
   "name": "ionicmaster",
-  "app_id": "",
   "integrations": {
     "cordova": {}
   },

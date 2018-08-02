@@ -11,7 +11,7 @@ import { BLE } from '@ionic-native/ble';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+
 import { ContactPage } from './../pages/contact/contact';
 import { AboutPage } from './../pages/about/about';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -34,19 +34,19 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { SpeechtotextPage } from '../pages/speechtotext/speechtotext';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
-
-
-
-
-
-
+import { CameraPage } from '../pages/camera/camera';
+import { Camera } from '@ionic-native/camera';
+import { PhotoLibrary } from '@ionic-native/photo-library';
+import { KeysPipe } from '../pipes/keys.pipe';
+import { ListPage } from '../pages/list/list';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,GoogleauthPage,MapslocationPage,FacebookloginPage,
-    BlehomePage,BledetailPage,SpinnerloaderPage,BarqrcodePage,SpeechtotextPage,
+    BlehomePage,BledetailPage,SpinnerloaderPage,BarqrcodePage,SpeechtotextPage,CameraPage,KeysPipe,
+
   ],
   imports: [
     BrowserModule,
@@ -59,13 +59,14 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
     HomePage,
     ListPage,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,HomePagetest,GoogleauthPage,MapslocationPage,FacebookloginPage,
     BlehomePage,BledetailPage,SpinnerloaderPage,BarqrcodePage,SpeechtotextPage,
+    CameraPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,TabsPage,AboutPage,ContactPage,TabPage,LoginPage,RegisterPage,ModelPage,GooglePlus,MapslocationPage,FacebookloginPage,
     BlehomePage,BledetailPage,BarqrcodePage,DataServiceProvider,BarcodeScanner,SpeechRecognition,TextToSpeech,
     {provide: ErrorHandler, useClass: IonicErrorHandler},Geolocation,
-    Device, Facebook,BLE,
+    Device, Facebook,BLE,Camera,PhotoLibrary,CameraPage,
   ],
 })
 export class AppModule {}

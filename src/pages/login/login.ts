@@ -13,6 +13,9 @@ export class LoginPage {
   public password: string;
   public error: string;
   apiUrl = 'http://72.249.170.12/BluetoothApi/api/Login/Login';
+  passwordType: string = 'password';
+  paIcon: string = 'eye-off';
+
   constructor(public http: Http) {
   }
   //https://www.djamware.com/post/59924f9080aca768e4d2b12e/ionic-3-consuming-rest-api-using-new-angular-43-httpclient
@@ -42,4 +45,9 @@ export class LoginPage {
           console.log(err);
         });
   }
+
+  hideShowPassword() {
+    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
+    this.paIcon = this.paIcon === 'eye-off' ? 'eye' : 'eye-off';
+}
 }

@@ -1,20 +1,30 @@
+import { Observable } from 'rxjs/Observable';
+import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Platform } from 'ionic-angular';
+import { Nav, Platform, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { User } from '../../model/user.model';
+import { MyApp } from '../../app/app.component';
+import { LoginPage } from '../login/login';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  uber: Observable<User[]>;
+
+  constructor(platform: Platform,private nav: NavController, statusBar: StatusBar, splashScreen: SplashScreen,public firebaseProvider: FirebaseProvider) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
+       statusBar.styleDefault();
       splashScreen.hide();
     });
+    this.openPage();
+  }
+
+  openPage() {
+
+
   }
 
 }

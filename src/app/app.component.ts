@@ -1,21 +1,25 @@
-import { BlehomePage } from './../pages/blehome/blehome';
-import { MapslocationPage } from './../pages/mapslocation/mapslocation';
-import { GoogleauthPage } from './../pages/googleauth/googleauth';
-import { TabPage } from './../pages/tabpage/tabpage';
+import { User } from './../model/user.model';
+import { HomePage } from './../pages/home/home';
+import { LoginPage } from '../pages/login/login';
+import { FirebaseProvider } from '../providers/firebase/firebase';
+import { BlehomePage } from '../pages/blehome/blehome';
+import { MapslocationPage } from '../pages/mapslocation/mapslocation';
+import { GoogleauthPage } from '../pages/googleauth/googleauth';
+import { TabPage } from '../pages/tabpage/tabpage';
 import { Component,ViewChild } from '@angular/core';
 import { Nav,Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { TabsPage } from '../pages/tabs/tabs';
-import { LoginPage } from '../pages/login/login';
+// import { TabsPage } from '../pages/tabs/tabs';
 import { RegisterPage } from '../pages/Register/register';
 import { FacebookloginPage } from '../pages/facebooklogin/facebooklogin';
 import { SpinnerloaderPage } from '../pages/spinnerloader/spinnerloader';
 import { BarqrcodePage } from '../pages/barqrcode/barqrcode';
 import { SpeechtotextPage } from '../pages/speechtotext/speechtotext';
 import { CameraPage } from '../pages/camera/camera';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase';
 
 
 @Component({
@@ -23,9 +27,14 @@ import { CameraPage } from '../pages/camera/camera';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = HomePage;
+  rootPage:any;
+  SuperUser: firebase.User;
   pages: Array<{title: string, component: any}>;
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  uber: Observable<User[]>;
+
+
+
+   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public firebaseProvider: FirebaseProvider) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -48,11 +57,80 @@ export class MyApp {
         { title: 'Speechtotext', component: SpeechtotextPage},
         { title: 'Camera & Filter', component: CameraPage},
       ];
+      this.viewDidLoad();
   }
+
+  viewDidLoad(){
+     debugger;
+    this.firebaseProvider.afAuth.authState.subscribe(
+      (user) => {
+          if (user && user.emailVerified) {
+            this.SuperUser=user;
+            this.firebaseProvider.setUsername();
+            this.nav.setRoot(HomePage);
+          }
+          else{
+
+            this.nav.setRoot(LoginPage);
+          }
+        },
+        (error) => {
+          this.nav.setRoot(LoginPage);
+         }
+      );
+
+  }
+
+
   openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+
+       this.nav.setRoot(page.component);
+
   }
+  // openPage() {
+  //   debugger;
+  //   this.firebaseProvider.afAuth.authState.subscribe( user => {
+  //     if (user && user.emailVerified) {
+  //        this.firebaseProvider.setFreshUser(user);
+  //        this.rootPage=HomePage
+  //        this.SuperUser=user;
+  //       (this.uber = this.firebaseProvider.findEmail(this.SuperUser.email.toLowerCase()))
+  //       .subscribe ((res: User[]) => {
+  //         console.log(res);
+  //         this.username = res[0].Username;
+  //       });
+  //       // this.nav.setRoot(this.rootPage);
+  //     } else {
+  //       this.rootPage=LoginPage;
+  //       this.nav.setRoot(this.rootPage);
+  //     }
+  //   },
+  //  () => {
+  //   this.rootPage=LoginPage;
+  //   this.nav.setRoot(this.rootPage);
+  //   console.log("logout error");
+  //  }
+  //  );
+
+  // }
+
+  logout(){
+    debugger;
+    this.firebaseProvider.signOut().then(() => {
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
+      console.log("logout");
+
+      this.firebaseProvider.username = "";
+      this.nav.setRoot(LoginPage);
+      },
+    (error)=>{
+      console.log("logout error");
+    });
+    }
+
+
+
+
 }
 

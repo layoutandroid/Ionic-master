@@ -1,4 +1,4 @@
-import { ModelPage } from './../Model/model';
+import { ModelPage } from '../Model/model';
 import { Component} from '@angular/core';
 import { NavController, NavParams, List, ModalController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';

@@ -8,6 +8,7 @@ import 'rxjs/add/operator/map';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
+
 @Injectable()
 export class DataServiceProvider {
 
@@ -15,7 +16,7 @@ export class DataServiceProvider {
     console.log('Hello DataServiceProvider Provider');
   }
 
-  getProducts(){
+  getProducts() {
     return this.http.get('assets/data/products.json')
       .map((response:Response)=>response.json());
   }

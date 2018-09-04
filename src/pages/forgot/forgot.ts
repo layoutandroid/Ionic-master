@@ -1,21 +1,20 @@
-import { User } from './../../model/user.model';
+import { LoginPage } from './../login/login';
 import { Observable } from 'rxjs/Observable';
 import { RegisterPage } from '../Register/register';
+import { User } from '../../model/user.model';
+import {HttpParams} from '@angular/common/http/src/params';
 import { Component, ViewChild } from '@angular/core';
-import { Http, Headers} from '@angular/http';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { Http, Headers,  } from '@angular/http';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
-import { ForgotPage } from '../forgot/forgot';
-import * as firebase from 'firebase';
-import { firebaseConfig } from '../../app/app.module';
 
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+  selector: 'page-forgot',
+  templateUrl: 'forgot.html'
 })
-export class LoginPage {
+export class ForgotPage {
   @ViewChild('email') email: any;
   public username: string;
   public password: string;
@@ -29,10 +28,10 @@ export class LoginPage {
 
 
 
-  constructor(private firebaseProvider: FirebaseProvider, private navCtrl: NavController,
-     public http: Http, public afDatabase: AngularFireDatabase
-     ) {
-    //this.user = this.firebaseProvider.getShoppingItems();
+  constructor(private navCtrl: NavController,public http: Http, public afDatabase: AngularFireDatabase,  public firebaseProvider: FirebaseProvider) {
+    debugger;
+    this.user = this.firebaseProvider.getShoppingItems();
+
 
 
   }
@@ -66,65 +65,18 @@ export class LoginPage {
   // }
 
   login() {
-    debugger;
 
 		if (!this.username) {
 			return;
 		}
 
-		let credentials = {
-			email: this.username,
-			password: this.password
-		};
-		this.firebaseProvider.signInWithEmail(credentials)
+		this.firebaseProvider.resetPassword(this.username)
 			.then(
-        (user) => {
-          if(user.user.emailVerified){
-            this.firebaseProvider.Superuser = user.user;
-            var pre_user= user.user;
-            if (pre_user) {
-              this.firebaseProvider.findEmail(pre_user.email).then (
-                (ref)=>{
-                this.uber=ref;
-                ////
-                this.uber.subscribe ((res: User[]) => {
-                      console.log(res);
-                  var m_user = res
-                  if(m_user.length===0)
-                  {
-                    this.firebaseProvider.isRegistredUser =false;
-                    this.navCtrl.setRoot(RegisterPage,{"email":pre_user.email});
-                  }
-                  else
-                  {
-
-                    this.firebaseProvider.username = res[0].Username;
-                    this.navCtrl.setRoot(HomePage);
-                  }
-                  },
-                  ()=>{
-                    this.firebaseProvider.isRegistredUser = false;
-                    return false;
-                  }
-                );
-
-              }
-              );
-           }
-
-            ////////////////
-          }
-          else{
-            alert("Email not varifired.Please check your mailbox");
-            this.firebaseProvider.sendEmailVerificationLink(user.user).then(
-              (ref)=>{
-              },
-              (error)=>{
-                 alert(error.message);
-              }
-            );
-          }
-        },
+				() => {
+          this.navCtrl.setRoot(LoginPage);
+          alert("You reset password requset will be sent to your Email, Please chceck your inbox now!");
+        }
+          ,
         error =>{ alert(error.message); this.loginError = error.message}
 
 			);
@@ -139,9 +91,8 @@ export class LoginPage {
     this.paIcon = this.paIcon === 'eye-off' ? 'eye' : 'eye-off';
 }
 
-forgotPassword(){
-  this.navCtrl.push(ForgotPage);
-}
+
+
 
 loginWithGoogle() {
   debugger;
@@ -191,14 +142,4 @@ loginWithGoogle() {
 
 
 
-saveData() {
-  const obj = {
-              UserName: "N/A",
-              Password:"N/A",
-              Name:"N/A",
-              Email:this.firebaseProvider.getEmail()
-            }
-             this.firebaseProvider.addUser(obj);
-
-}
 }

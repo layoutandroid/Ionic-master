@@ -1,11 +1,26 @@
-
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ionic-Master</ion-title>
+    <ion-buttons end>
+      <button ion-button tappable>
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      <button ion-button tappable>
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
 <ion-content padding class="login auth-page">
     <div class="login-content">
       <!-- Logo -->
     <div padding-horizontal text-center class="animated fadeInDown">
-        <div class="logo"></div>
+        <br/>
         <h2 ion-text class="text-primary">
-          <strong>Ionic 3</strong> Start Theme
+          <strong> Forgot Password ?</strong>
         </h2>
       </div>
   <ion-row>
@@ -31,25 +46,7 @@
                   [(ngModel)]='username'
                  #email></ion-input>
             </ion-item>
-            <ion-item>
-                  <ion-label floating>
-                    <ion-icon
-                    name="lock"
-                    item-start
-                    class="text-primary">
-                  </ion-icon>
-                    Password
-                  </ion-label>
-              <ion-input name="password"
-                      id="passwordField"
-                      [(ngModel)]='password'
-                      [type]="passwordType"
-                      required
-                     ></ion-input>
-              <button ion-button clear item-end (click)='hideShowPassword()' style="top: 22px !important;">
-                  <ion-icon [name]="paIcon" style="font-size:22px;"></ion-icon>
-               </button>
-            </ion-item>
+
           </ion-list>
         </ion-col>
       </ion-row>
@@ -57,21 +54,11 @@
         <ion-col>
           <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
           <button ion-button class="submit-btn" full type="submit" (click)="login()"
-                  [disabled]="!loginForm.form.valid">Login
+                  [disabled]="!loginForm.form.valid">Submit
           </button>
         </ion-col>
       </ion-row>
-      <ion-row  class="right-text">
-        <div>
-          <p>
-              <button ion-button  clear (click)="forgotPassword()">
-
-                  Forgot password?
-                </button>
-
-          </p>
-        </div>
-      </ion-row>
+      <br/>
       <B><div style="text-align:center">If you're a new user, please sign up.</div></B>
       <ion-row class="right-text">
           <ion-list  class="right-text">
